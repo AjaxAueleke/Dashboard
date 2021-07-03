@@ -6,7 +6,7 @@ console.log(messageBox);
 messageBox.style.display = "none";
 document.getElementsByTagName("button")[0].addEventListener("click", () => {
   if (email.value && password.value) {
-    let users = JSON.parse(localStorage.getItem("users"));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
     let userIdx = users.findIndex(val => val.email == email.value);
     if (userIdx == -1) {
       message("User does not exist");
