@@ -34,7 +34,7 @@ function onSubmit() {
       email.value = "";
       password.value = "";
       message("Congrats! User successfully created");
-      location.href ='/dashboard.html';
+      location.href ='Dashboard/dashboard.html';
     } else {
       message("User already exist");
       name.value = "";

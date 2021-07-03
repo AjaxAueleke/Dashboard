@@ -13,7 +13,7 @@ document.getElementsByTagName("button")[0].addEventListener("click", () => {
     } else {
       if (users[userIdx].password == password.value) {
         localStorage.setItem('currUser', JSON.stringify(users[userIdx]))
-        location = 'dashboard.html';
+        location = 'Dashboard/dashboard.html';
       }
       else {
           message("Invalid Credentials");

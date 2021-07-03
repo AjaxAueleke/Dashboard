@@ -3,7 +3,7 @@ let currUser = JSON.parse(localStorage.getItem("currUser")) || {
   email: "email@email.com",
 };
 if (currUser.email == "email@email.com") {
-    location.href = '/index.html';
+    location.href = 'Dashboard' + '/index.html';
 }
 let nameElement = document.getElementsByClassName("name")[0];
 let name = document.getElementById("name");
@@ -70,5 +70,5 @@ function deleteElement(e) {
 
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.removeItem("currUser");
-    location.href = '/index.html'
+    location.href ='Dashboard' + '/index.html'
 })
