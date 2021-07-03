@@ -1,9 +1,9 @@
 let name = document.getElementById("name");
 let email = document.getElementById("email");
 let password = document.getElementById("password");
-let messageBox = document.getElementsByClassName("alert")[0];
 let signInBtn = document.getElementsByTagName("button")[0];
 
+let messageBox = document.getElementsByClassName("alert")[0];
 
 
 messageBox.style.display = "none";
