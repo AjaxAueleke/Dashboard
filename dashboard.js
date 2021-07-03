@@ -2,6 +2,9 @@ let currUser = JSON.parse(localStorage.getItem("currUser")) || {
   name: "Alex",
   email: "email@email.com",
 };
+if (currUser.email == "email@email.com") {
+    location.href = '/index.html';
+}
 let nameElement = document.getElementsByClassName("name")[0];
 let name = document.getElementById("name");
 console.log(name);
@@ -10,7 +13,7 @@ let emailSection = document.getElementById("section-email");
 nameSection.innerText = currUser.name;
 emailSection.innerText = currUser.email;
 name.innerText = currUser.name;
-let contentArray =JSON.parse( localStorage.getItem('contentArray')) || [];
+let contentArray =JSON.parse( localStorage.getItem(currUser.email)) || [];
 window.onload =  () => {
     contentArray.forEach((val)=>{
         createCard(val);
@@ -24,7 +27,7 @@ function onSubmit() {
   let cardObj = {title,content}
   contentArray.push(cardObj);
   createCard(cardObj);
-  localStorage.setItem('contentArray', JSON.stringify(contentArray));
+  localStorage.setItem(currUser.email, JSON.stringify(contentArray));
   }
 }
 function createCard(obj) {
@@ -35,6 +38,9 @@ function createCard(obj) {
                             </div>
                                 <div class="col-md-8 ">
                                     <div class="card-body">
+ <button class = "position-absolute top-1 close" onclick = "deleteElement(this)"><i class="fas fa-times"></i></button>
+
+
                                         <h5 class="card-title">${obj.title}</h5>
                                         <p class="card-text">${obj.content}
                                         </p>
@@ -52,3 +58,17 @@ function createCard(obj) {
   div.innerHTML = card;
   document.getElementById("content").appendChild(div);
 }
+
+function deleteElement(e) {
+    let searchTitle = e.nextElementSibling.innerText;
+    console.log(searchTitle);
+    let contentArray = JSON.parse(localStorage.getItem(currUser.email));
+    contentArray.splice(contentArray.findIndex((val) => val.title == searchTitle),1);
+    localStorage.setItem(currUser, JSON.stringify(contentArray));
+    e.parentNode.parentNode.parentNode.parentNode.remove();
+}
+
+document.getElementById('logout').addEventListener('click', () => {
+    localStorage.removeItem("currUser");
+    location.href = '/index.html'
+})

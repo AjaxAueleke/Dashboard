@@ -86,3 +86,8 @@ h3 {
   cursor: pointer;
   user-select: none;
 }
+.close {
+    right : 20px !important;
+    background-color: transparent;
+    border : none;
+}
