@@ -64,7 +64,7 @@ function deleteElement(e) {
     console.log(searchTitle);
     let contentArray = JSON.parse(localStorage.getItem(currUser.email));
     contentArray.splice(contentArray.findIndex((val) => val.title == searchTitle),1);
-    localStorage.setItem(currUser, JSON.stringify(contentArray));
+    localStorage.setItem(currUser.email, JSON.stringify(contentArray));
     e.parentNode.parentNode.parentNode.parentNode.remove();
 }
 

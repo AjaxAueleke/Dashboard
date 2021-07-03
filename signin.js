@@ -23,8 +23,10 @@ function onSubmit() {
       password: password.value,
     };
     let users = JSON.parse(localStorage.getItem("users")) || [];
-    let userIdx = users.find((val) => val.email.toLocaleLowerCase() == user.email.toLocaleLowerCase());
-    if (userIdx != -1) {
+    console.log(users);
+    let userIdx = users.findIndex((val) => val.email == user.email);
+    console.log(userIdx);
+    if (userIdx == -1) {
       users.push(user);
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("currUser", JSON.stringify(user));
