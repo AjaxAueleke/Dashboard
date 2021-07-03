@@ -1,0 +1,88 @@
+/* #e0e8e7
+#bccac1
+#6aa7b3
+#5f5f5f
+#787b85
+#2f3433
+#f04c0f 
+colors used for dashboard
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+.style {
+  height: 100vh;
+  background-color: #e0e8e7;
+  border-right: 2px solid #bccac1;
+  overflow: auto;
+}
+.style .logo {
+  font-size: 1.75rem;
+  user-select: none;
+  cursor: pointer;
+}
+.style .logo span {
+  font-weight: bolder;
+}
+.style img {
+  border: 1px solid #6aa7b3;
+  margin-bottom: 50px !important;
+}
+.logout,
+.details {
+  margin-top: 100px;
+}
+.details i,
+.logout i {
+  margin-right: 10px;
+  color: purple;
+}
+.name span {
+  font-weight: bolder;
+}
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.name img {
+  width: 2rem;
+  border-radius: 50%;
+}
+.name {
+  padding: 5px;
+
+  border-bottom: 2px solid #bccac1;
+}
+h3 {
+  font-weight: bolder !important;
+}
+.content {
+  background-color: #bccac18f;
+  height: 75vh;
+  overflow-y: auto;
+}
+.input-content {
+  width: 50%;
+  display: block;
+  border: none;
+  font-size: 1.5rem;
+  color: #6aa7b3;
+  margin: auto;
+  background-color: #bccac1c0;
+  border-radius: 5px;
+}
+.logout:hover {
+  background-color: #f04c0f;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+.logout:hover i {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
