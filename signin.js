@@ -1,4 +1,4 @@
-let name = document.getElementById("name");
+let name = document.getElementById("f-name");
 let email = document.getElementById("email");
 let password = document.getElementById("password");
 let signInBtn = document.getElementsByTagName("button")[0];
