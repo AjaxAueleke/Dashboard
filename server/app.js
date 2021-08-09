@@ -6,8 +6,12 @@ const dsModel = require("./schema.js");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const DB_URI = "mongodb+srv://admin:admin@cluster0.ewjm1.mongodb.net/DEV";
-const port = 5006;
+app.use(cors({
+  origin : "*",
+  methods : ['GET', 'POST', 'PUT']
+}));  
+const DB_URI = "mongodb+srv://ahmed:admin@cluster0.uj1ij.mongodb.net/crudnode?retryWrites=true&w=majority/";
+const port = 8080;
 mongoose.connect(DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -19,6 +23,7 @@ mongoose.connection.on("error", (error) =>
 
 app.post("/create", (req, res) => {
   const body = req.body;
+  console.log(body);
   dsModel.create(body, (err, data) => {
     try {
       if (err) {
@@ -32,6 +37,7 @@ app.post("/create", (req, res) => {
     }
   });
 });
+
 app.get("/getPost", (req, res) => {
   dsModel.find({}, (err, data) => {
     try {
